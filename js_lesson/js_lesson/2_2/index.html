@@ -7,60 +7,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
   <script>
 
-   $(function(e){
+   $(function(){
       // ここに処理を記述
-      
-      $('#button1').on('mouseover', function(){
-        $('#button1').css('background-color', '#ff0000');
+      $('.button').on('click', function(){
+        $('.button').removeClass('isActive');
+        $(this).addClass('isActive');
       });
-      $('#button1').on('mouseout', function(){
-        $('#button1').css('background-color', '');
-      });
-
-      $('#button2').on('mouseover', function(){
-        $('#button2').css('background-color', '#ff0000');
-      });
-      $('#button2').on('mouseout', function(){
-        $('#button2').css('background-color', '');
-      });
-
-      $('#button3').on('mouseover', function(){
-        $('#button3').css('background-color', '#ff0000');
-      });
-      $('#button3').on('mouseout', function(){
-        $('#button3').css('background-color', '');
-      });
-
-
-      // 目的：上記コードをリファクタリングする
-      // 考え方：マウスオーバーとマウスアウトを定数にまとめ各ボタンIDに割り当てる
-      // 方法：定数(button4)を定める
-      // 　　　定数内の関数の要素(各buttan)を「target」に置き換えて関数式を作成
-    
-    //   const button4 =()=>{
-    //     $('.button').on('mouseover', function(e){
-    //     $('e.target').css('background-color', '#ff0000');
-    //     });
-    //     $('e.target').on('mouseout', function(e){
-    //     $('e.target').css('background-color', '');
-    //     });
-    //   }
-      
-    //   $('#button1').on('mouseover', function(e){
-    //     button4();
-    //   });
-
-    //   $('#button2').on('mouseover', function(e){
-    //     button4();
-    //   });
-
-    //   $('#button3').on('mouseover', function(e){
-    //     button4();
-    //   });
     });  
-
-    console.log(buttan)
-
   </script>
 </head>
 

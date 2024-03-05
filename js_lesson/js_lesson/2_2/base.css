@@ -58,3 +58,9 @@ body {
   font-size: 30px;
   text-align: center;
 }
+
+.button.isActive{
+  background-color: #ff0000;
+}
+
+
