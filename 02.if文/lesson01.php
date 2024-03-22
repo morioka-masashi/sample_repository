@@ -20,9 +20,9 @@ $score = 51;
 // $score = 0;
 
 if($score > 50){
- echo '50より大きい';
-}elseif ($score == 50) {
-    echo '50です';
-} else{
- echo '50より小さい';
+    echo '50より大きい';
+    }elseif ($score == 50) {
+        echo '50です';
+    } else{
+    echo '50より小さい';
 }
