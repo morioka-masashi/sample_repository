@@ -16,42 +16,41 @@ $arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 // 3, 1, 2, 4
 // ↓
 // 1, 3, 2, 4
-// ↓
-// 1, 2, 3, 4　←これが画面に表示される
-
-$arr = [99, 3, 12, 45, 60, 100, 31, 7, 28];
 
 // ここで並び替え処理
 
 
-$count = count($arr)-1;
+$count = count($arr) - 1;
 $arr2 = [3, 12, 45, 60, 99, 31, 7, 28, 100];
 
-for($q = 0; $q < $count; $q++){
-    for($i = 0; $i < $count; $i++){
-        $k = array_keys($arr)[$i+1]; 
+for ($q = 0; $q < $count; $q++) {
+    for ($i = 0; $i < $count; $i++) {
+        $k = array_keys($arr)[$i + 1];
         $y = $arr[$i];
         if ($arr[$i] > $arr[$k]) {
             $arr[$i] = $arr[$k];
             $arr[$k] = $y;
-        } 
+        }
     }
 }
 
 ?>
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="utf-8">
-<title>数字並び替えプログラム</title>
+    <meta charset="utf-8">
+    <title>数字並び替えプログラム</title>
 </head>
+
 <body>
     <!-- ここに並び替え後を表示 -->
-    <?php 
-        for($j = 0; $j < $count; $j++){
-            echo $arr[$j].",&nbsp;";
-        }
-        echo $arr[$j]."&nbsp;";
+    <?php
+    for ($j = 0; $j < $count; $j++) {
+        echo $arr[$j] . ",&nbsp;";
+    }
+    echo $arr[$j] . "&nbsp;";
     ?>
 </body>
+
 </html>

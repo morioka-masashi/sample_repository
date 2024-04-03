@@ -13,14 +13,14 @@
 // 12345678987654321
 
 for ($y = 1; $y <= 9; $y++) {
-    for ($x = 9; $x > $y; $x--) {
-        echo "*";
-      }
-      for ($x = 1; $x < $y; $x++){
-        echo $x;
-      }
-        for ($x = $y; $x >= 1; $x--) {
-          echo $x;
-        }
+  for ($x = 9; $x > $y; $x--) {
+    echo "*";
+  }
+  for ($x = 1; $x < $y; $x++) {
+    echo $x;
+  }
+  for ($x = $y; $x >= 1; $x--) {
+    echo $x;
+  }
   echo "<br>";
 }
