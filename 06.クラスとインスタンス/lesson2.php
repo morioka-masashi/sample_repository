@@ -48,7 +48,6 @@ class Patient extends Person
 
     public function calculateStandardWeight(){
         return $this->height * $this->height * 22;
-
     }
 
     public function getHeight(){
