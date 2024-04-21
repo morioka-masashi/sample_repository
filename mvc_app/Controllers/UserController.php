@@ -171,13 +171,13 @@ class UserController extends Controller
             exit();
         }
 
-
         $user = new User;
         $result = $user->getMyPage($userId);
         $errorMessages = $_SESSION['errorMessages'] ?? [];
         $post = $_SESSION['post'] ?? [];
         $_SESSION['errorMessages'] = [];
         $_SESSION['post'] = [];
+        
         if (empty($errorMessages)) {
             $this->view('user/edit', ['data' => $result, 'auth' => $userId]);
         } else {
@@ -235,6 +235,5 @@ class UserController extends Controller
                 header('Location: /user/signup');
             }
         }
-
     }
 }

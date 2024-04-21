@@ -20,43 +20,43 @@
                     <div class="form-group">
                         <label for="name">名前</label>
                         <input type="text" class="form-control" name="name" maxlength="10" readonly
-                            value={htmlspecialchars($data['name'])}>
+                            value={$data['name']}>
                     </div>
 
                     <div class="form-group">
                         <label for="kana">フリガナ</label>
                         <input type="text" class="form-control" name="kana" maxlength="10" readonly
-                            value={htmlspecialchars($data['kana'])}>
+                            value={$data['kana']}>
                     </div>
 
                     <div class="phone">
                         <label for="tel">電話番号</label>
                         <input type="tel" class="form-control" name="tel" readonly
-                            value={htmlspecialchars($data['tel'])}>
+                            value={$data['tel']}>
                     </div>
 
                     <div class="form-group">
                         <label for="email">メールアドレス</label>
                         <input type="email" class="form-control" name="email" readonly
-                            value={htmlspecialchars($data['email'])}>
+                            value={$data['email']}>
 
                     </div>
 
                     <div class="form-group">
                         <label for="body">お問い合わせ内容</label><br>
-                        <textarea cols="58" rows="8" name="body" readonly>{htmlspecialchars($data['body'])}</textarea>
+                        <textarea cols="58" rows="8" name="body" readonly>{$data['body']}</textarea>
                     </div>
 
                     <div>
                         上記の内容でよろしいですか？
                     </div>
 
-
                     <div class="button-group">
                         <input type="hidden" name="token" value="{$data['token']}">
                         <button type="submit" class="btn bg-warning my-2">送信</button>
                         <button type="button" class="btn bg-warning my-2" onclick="history.back(-1)">キャンセル</button>
                     </div>
+                    
                 </form>
             </div>
         </div>

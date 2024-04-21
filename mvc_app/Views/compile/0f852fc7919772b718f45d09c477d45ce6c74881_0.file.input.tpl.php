@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.2, created on 2024-04-18 21:36:47
+/* Smarty version 4.3.2, created on 2024-04-21 23:29:15
   from 'C:\xampp\htdocs\mvc_app\Views\inquiry\input.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.2',
-  'unifunc' => 'content_662113df30fb13_27447523',
+  'unifunc' => 'content_662522bbb14ae3_19520126',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0f852fc7919772b718f45d09c477d45ce6c74881' => 
     array (
       0 => 'C:\\xampp\\htdocs\\mvc_app\\Views\\inquiry\\input.tpl',
-      1 => 1713443797,
+      1 => 1713708828,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_662113df30fb13_27447523 (Smarty_Internal_Template $_smarty_tpl) {
+function content_662522bbb14ae3_19520126 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html>
 
@@ -54,7 +54,8 @@ function content_662113df30fb13_27447523 (Smarty_Internal_Template $_smarty_tpl)
 
                     <div class="form-group">
                         <label for="tel">電話番号</label>
-                        <input type="tel" class="form-control" name="tel" placeholder="ハイフンを入れずに入力してください" id="tel" maxlength="11">
+                        <input type="tel" class="form-control" name="tel" placeholder="ハイフンを入れずに入力してください" id="tel"
+                            maxlength="11">
                         <div class="errorMessage" id="telErrorMessage" style="color: red;"></div>
                     </div>
 
@@ -95,15 +96,15 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['row']->value) {
 $_smarty_tpl->tpl_vars['row']->do_else = false;
 ?>
                             <tr class="table-secondary">
-                                <td class=border-dark><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['row']->value['name']);?>
+                                <td class=border-dark><?php echo $_smarty_tpl->tpl_vars['row']->value['name'];?>
 </td>
-                                <td class=border-dark><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['row']->value['kana']);?>
+                                <td class=border-dark><?php echo $_smarty_tpl->tpl_vars['row']->value['kana'];?>
 </td>
-                                <td class=border-dark><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['row']->value['tel']);?>
+                                <td class=border-dark><?php echo $_smarty_tpl->tpl_vars['row']->value['tel'];?>
 </td>
-                                <td class=border-dark><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['row']->value['email']);?>
+                                <td class=border-dark><?php echo $_smarty_tpl->tpl_vars['row']->value['email'];?>
 </td>
-                                <td class=border-dark><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['row']->value['body']);?>
+                                <td class=border-dark><?php echo $_smarty_tpl->tpl_vars['row']->value['body'];?>
 </td>
                                 <!-- IDを隠しフィールドとしてフォームに追加 -->
                                 <td class=border-dark>

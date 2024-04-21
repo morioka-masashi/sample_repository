@@ -49,36 +49,7 @@
                         <textarea cols="58" rows="8" name="body" id="body">{$contact['body']}</textarea>
                         <div class="errorMessage" id="bodyErrorMessage" style="color: red;"></div>
                     </div>
-                    {* <div class="form-group">
-                        <label for="name">氏名</label>
-                        <input type="text" class="form-control" name="name" value="{$contact['name']}">
-                        <div class="errorMessage" id="nameErrorMessage" style="color: red;"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="kana">フリガナ</label>
-                        <input type="text" class="form-control" name="kana" value="{$contact['kana']}">
-                        <div class="errorMessage" id="kanaErrorMessage" style="color: red;"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="tel">電話番号</label>
-                        <input type="tel" class="form-control" name="tel" value="{$contact['tel']}">
-                        <div class="errorMessage" id="telErrorMessage" style="color: red;"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">メールアドレス</label>
-                        <input type="email" class="form-control" name="email" value="{$contact['email']}">
-                        <div class="errorMessage" id="emailErrorMessage" style="color: red;"></div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="body">お問い合わせ内容</label><br>
-                        <textarea cols="58" rows="8" name="body">{$contact['body']}</textarea>
-                        <div class="errorMessage" id="bodyErrorMessage" style="color: red;"></div>
-                    </div> *}
-
+                    
                     <div class="edit-button">
                         <input type="hidden" name="token" value="{$token['token']}">
                         <button type="submit" class="btn bg-warning my-2" id="submit">上記の変更でよろしいですか？</button>

@@ -9,13 +9,11 @@ class Inquiry extends Db
         // 引数の値をプロパティに保存する
         $this->_value = $i;
     }
-
     public function __construct($dbh = null)
     {
         parent::__construct($dbh);
         $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
-
     // mysqlからデータ(表)の取得
     public function getAllContacts()
     {
@@ -88,7 +86,6 @@ class Inquiry extends Db
             return null;
         }
     }
-
     public function save($id, $name, $kana, $tel, $email, $body)
     {
         try {
@@ -131,7 +128,4 @@ class Inquiry extends Db
             return false;
         }
     }
-
-
-
 }

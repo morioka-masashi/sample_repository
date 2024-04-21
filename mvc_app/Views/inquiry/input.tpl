@@ -67,11 +67,11 @@
                         </tr>
                         {foreach from=$data item=row}
                             <tr class="table-secondary">
-                                <td class=border-dark>{htmlspecialchars($row.name)}</td>
-                                <td class=border-dark>{htmlspecialchars($row.kana)}</td>
-                                <td class=border-dark>{htmlspecialchars($row.tel)}</td>
-                                <td class=border-dark>{htmlspecialchars($row.email)}</td>
-                                <td class=border-dark>{htmlspecialchars($row.body)}</td>
+                                <td class=border-dark>{$row.name}</td>
+                                <td class=border-dark>{$row.kana}</td>
+                                <td class=border-dark>{$row.tel}</td>
+                                <td class=border-dark>{$row.email}</td>
+                                <td class=border-dark>{$row.body}</td>
                                 <!-- IDを隠しフィールドとしてフォームに追加 -->
                                 <td class=border-dark>
                                     <form action="/inquiry/edit" method="post">

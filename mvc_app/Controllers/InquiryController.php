@@ -36,11 +36,8 @@ class InquiryController extends Controller
         $this->view('inquiry/input', ['data' => $data, 'token' => $token]);
     }
 
-
     public function confirm(array $data = [])
     {
-
-
         // フォームの送信があった場合のみ処理を行う
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -88,26 +85,17 @@ class InquiryController extends Controller
                 header('Location: /');
                 exit();
             }
-
-            // POSTされたデータを取得
-            $name = $_POST['name'];
-            $kana = $_POST['kana'];
-            $tel = $_POST['tel'];
-            $email = $_POST['email'];
-            $body = $_POST['body'];
-            $token = $_POST['token'];
-
             // 直前の入力内容をセッションに保存
-            $_SESSION['name'] = htmlspecialchars($name);
-            $_SESSION['kana'] = htmlspecialchars($kana);
-            $_SESSION['tel'] = htmlspecialchars($tel);
-            $_SESSION['email'] = htmlspecialchars($email);
-            $_SESSION['body'] = htmlspecialchars($body);
-            $_SESSION['token'] = htmlspecialchars($token);
-
+            $data = [
+                'name'  => htmlspecialchars($_POST['name']),
+                'kana'  => htmlspecialchars($_POST['kana']),
+                'tel'   => htmlspecialchars($_POST['tel']),
+                'email' => htmlspecialchars($_POST['email']),
+                'body'  => htmlspecialchars($_POST['body']),
+                'token' => htmlspecialchars($_POST['token']),
+            ];
             // ビューにデータを渡す
-            $this->view('inquiry/confirm', ['data' => $_SESSION]);
-            // セッションを消す(配列を空にすることを忘れない⇒確認画面に行くとき)
+            $this->view('inquiry/confirm', ['data' => $data]);
         } else {
             // POST以外のリクエストの場合は不正なアクセスとして扱う
             header("Location: /inquiry/input");
@@ -117,9 +105,6 @@ class InquiryController extends Controller
 
     public function complete()
     {
-
-
-
         // POST リクエストの場合のみ処理を行う
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // CSRFトークンのチェック
@@ -130,11 +115,11 @@ class InquiryController extends Controller
             }
 
             // POST データを取得
-            $name = htmlspecialchars($_POST['name']);
-            $kana = htmlspecialchars($_POST['kana']);
-            $tel = htmlspecialchars($_POST['tel']);
+            $name  = htmlspecialchars($_POST['name']);
+            $kana  = htmlspecialchars($_POST['kana']);
+            $tel   = htmlspecialchars($_POST['tel']);
             $email = htmlspecialchars($_POST['email']);
-            $body = htmlspecialchars($_POST['body']);
+            $body  = htmlspecialchars($_POST['body']);
             $token = htmlspecialchars($_POST['token']);
 
 
@@ -156,8 +141,6 @@ class InquiryController extends Controller
 
     public function edit()
     {
-
-
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // クエリパラメータからIDを取得
             if (!isset($_POST['id'])) {
@@ -204,7 +187,6 @@ class InquiryController extends Controller
 
         } elseif (mb_strlen($_POST['name']) > 10) {
             $errorMessages['name'] = '氏名は10文字以内です。';
-
         }
 
         if (empty($_POST['kana'])) {
@@ -233,7 +215,6 @@ class InquiryController extends Controller
 
         if (empty($_POST['body'])) {
             $errorMessages['body'] = 'お問い合わせ内容は必須入力です。';
-
         }
 
         if (!empty($errorMessages)) {
@@ -241,8 +222,6 @@ class InquiryController extends Controller
             header('Location: /');
             exit();
         }
-
-
         // CSRF トークンの検証
         if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token']) {
             // CSRFトークンが一致しない場合は不正なアクセスとして処理
@@ -251,12 +230,12 @@ class InquiryController extends Controller
         }
 
         // フォームデータの受け取り
-        $id = htmlspecialchars($_POST['id']); // id を受け取る
-        $name = htmlspecialchars($_POST['name']);
-        $kana = htmlspecialchars($_POST['kana']);
-        $tel = htmlspecialchars($_POST['tel']);
+        $id    = htmlspecialchars($_POST['id']); // id を受け取る
+        $name  = htmlspecialchars($_POST['name']);
+        $kana  = htmlspecialchars($_POST['kana']);
+        $tel   = htmlspecialchars($_POST['tel']);
         $email = htmlspecialchars($_POST['email']);
-        $body = htmlspecialchars($_POST['body']);
+        $body  = htmlspecialchars($_POST['body']);
         $token = htmlspecialchars($_POST['token']);
 
         // モデルの呼び出しとデータベースへの保存または更新
@@ -281,7 +260,6 @@ class InquiryController extends Controller
 
     public function delete()
     {
-
         // CSRF トークンの検証
         if (!isset($_POST['token']) || $_POST['token'] !== $_SESSION['token']) {
             // CSRFトークンが一致しない場合は不正なアクセスとして処理
